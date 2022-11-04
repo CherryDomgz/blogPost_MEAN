@@ -26,7 +26,7 @@ mongoose
 
 app.use(express.json());//in front of app.use
 app.use(express.urlencoded({extended:false}));
-app.use("/images", express.static(path.join("backend/images")));//static-any request targetting /images will be fetched.
+app.use("/images", express.static(path.join("images")));//static-any request targetting /images will be fetched.
 
 //for heroku deployment
 app.use("/", express.static(path.join(__dirname, "../dist/udemy-course-project")));
