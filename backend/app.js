@@ -28,6 +28,9 @@ app.use(express.json());//in front of app.use
 app.use(express.urlencoded({extended:false}));
 app.use("/images", express.static(path.join("backend/images")));//static-any request targetting /images will be fetched.
 
+//for heroku deployment
+app.use("/", express.static(path.join(__dirname, "../dist/udemy-course-project")));
+
 app.use ((req,res,next) => {
   res.setHeader('Access-Control-Allow-Origin', "*");
   res.setHeader (
@@ -41,16 +44,13 @@ app.use ((req,res,next) => {
   next ();
 });
 
-//for heroku deployment
-app.use("/", express.static(path.join(__dirname, "../dist/udemy-course-project")));
+app.use ("/api/posts", postsRoutes); //filter request going to API post and only request where url path starts will be forwarded to postRoutes
+app.use("/api/user", userRoutes);
 
+//for heroku deployment
 app.use((req, res, next) => {
   res.sendFile(path.join(__dirname, "../dist/udemy-course-project/index.html"));
 });
-
-
-app.use ("/api/posts", postsRoutes); //filter request going to API post and only request where url path starts will be forwarded to postRoutes
-app.use("/api/user", userRoutes);
 
 module.exports = app;
 

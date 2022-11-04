@@ -60,26 +60,30 @@ exports.updatePost = (req, res, next) => {
 };
 
 exports.getPosts = (req, res, next) => {
-  const pageSize = +req.query.pagesize;
-  const currentPage = +req.query.page;
+  const pageSize = +req.query.pagesize; //pagesize and page name are totally up to you
+  const currentPage = +req.query.page; // add + to convert to numbers
   const postQuery = Post.find();
   let fetchedPosts;
   if (pageSize && currentPage) {
-    postQuery.skip(pageSize * (currentPage - 1)).limit(pageSize);
+    postQuery
+      .skip(pageSize * (currentPage - 1))
+      .limit(pageSize); //skip and limit -= provided by mongoose; skip - skipping previous pages, limit - narrow down documents we return
   }
   postQuery
     .then(documents => {
-      fetchedPosts = documents;
-      return Post.count();
+      fetchedPosts = documents; //fetch post
+      console.log(documents);
+      return Post.count(); //count how many posts
     })
     .then(count => {
       res.status(200).json({
         message: "Posts fetched successfully!",
         posts: fetchedPosts,
-        maxPosts: count
+        maxPosts: count // # of posts we have in the database in total
       });
     })
     .catch(error => {
+      console.log(error);
       res.status(500).json({
         message: "Fetching posts failed!"
       });
