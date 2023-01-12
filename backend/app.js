@@ -10,13 +10,13 @@ const app = express ();
 // mongodb pw: q72JZv0xMNK8PgSD
 mongoose
   .connect(
-    //"mongodb+srv://CherryD:q72JZv0xMNK8PgSD@school-projects-cluster.vuqi9wf.mongodb.net/blogpost?retryWrites=true&w=majority",
-   //{useNewUrlParser: true, useUnifiedTopology: true })
-    "mongodb+srv://CherryD:" +
-    process.env.MONGO_ATLAS_PW +
-    "@school-projects-cluster.vuqi9wf.mongodb.net/blogpost?retryWrites=true&w=majority",
-    {useNewUrlParser: true, useUnifiedTopology: true }
-    )
+    "mongodb+srv://CherryD:q72JZv0xMNK8PgSD@school-projects-cluster.vuqi9wf.mongodb.net/blogpost?retryWrites=true&w=majority",
+   {useNewUrlParser: true, useUnifiedTopology: true })
+    //"mongodb+srv://CherryD:" +
+    //process.env.MONGO_ATLAS_PW +
+    //"@school-projects-cluster.vuqi9wf.mongodb.net/blogpost?retryWrites=true&w=majority",
+    //{useNewUrlParser: true, useUnifiedTopology: true }
+    //)
   .then(() => {
     console.log("Connected to database!");
   })
