@@ -76,6 +76,7 @@ exports.getPosts = (req, res, next) => {
       return Post.count(); //count how many posts
     })
     .then(count => {
+      console.log(count);
       res.status(200).json({
         message: "Posts fetched successfully!",
         posts: fetchedPosts,

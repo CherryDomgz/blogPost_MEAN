@@ -23,8 +23,10 @@ export class PostsService {
       .get<{message: string, posts: any, maxPosts: number }>(
         BACKEND_URL + queryParams
       )
-      .pipe(map((postData) => {// pipe is a method that accepts multiple operators we can add
-        return {posts: postData.posts.map(post => {
+      .pipe(
+        map(postData => {// pipe is a method that accepts multiple operators we can add
+        return {
+          posts: postData.posts.map(post => {
           return {
             title: post.title,
             content: post.content,
@@ -32,11 +34,13 @@ export class PostsService {
             imagePath: post.imagePath,
             creator: post.creator
           };
-        }), maxPosts: postData.maxPosts
+        }), 
+        maxPosts: postData.maxPosts
       };
-      }))
+      })
+      )
       .subscribe(transformedPostData => {
-          console.log (transformedPostData.posts);
+          console.log (transformedPostData);
           this.posts = transformedPostData.posts;
           this.postsUpdated.next({
             posts: [...this.posts],
