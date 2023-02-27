@@ -13,6 +13,8 @@ A simple blog post created using MongoDB, Express, Angular, and NodeJS.
 🔗 Deployed on Heroku: https://simple-blog-post-mean.herokuapp.com/ 
 (JAN 2023 UPDATE: CAN'T BE OPEN ON HEROKU - free Heroku Dynos are no longer available)  
 
+📧 Email: cherry.dominguez36@gmail.com
+
 💜 PREVIEW: 💜
 
 ![image](https://user-images.githubusercontent.com/105072341/200129253-d274b00b-a414-4dda-9394-37bcdeb46351.png)
