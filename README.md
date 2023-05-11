@@ -10,9 +10,6 @@ A simple blog post created using MongoDB, Express, Angular, and NodeJS.
 
  ✏️ NODEJS is a server-side library that listens to requests and sends responses. It interacts with databases and files.
 
-🔗 Deployed on Heroku: https://simple-blog-post-mean.herokuapp.com/ 
-(JAN 2023 UPDATE: CAN'T BE OPEN ON HEROKU - free Heroku Dynos are no longer available)  
-
 📧 Email: cherry.dominguez36@gmail.com
 
 💜 PREVIEW: 💜
