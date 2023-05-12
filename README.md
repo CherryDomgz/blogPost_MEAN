@@ -14,9 +14,7 @@ A simple blog post created using MongoDB, Express, Angular, and NodeJS.
 
 💜 PREVIEW: 💜
 
-![image](https://user-images.githubusercontent.com/105072341/200129253-d274b00b-a414-4dda-9394-37bcdeb46351.png)
-
-![image](https://user-images.githubusercontent.com/105072341/200129318-1b29339b-d97e-4895-ad5c-62f4290c9cd6.png)
+![blog](https://github.com/CherryDomgz/blogPost_MEAN/assets/105072341/374f4cd8-b67a-426e-967e-73a35c7c182b)
 
 
 
